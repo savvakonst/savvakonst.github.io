@@ -1,0 +1,189 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>the execution order table &#8212; express-ex  documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/llvm-theme.css" />
+    <link rel="stylesheet" type="text/css" href="_static/graphviz.css" />
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="nav-item nav-item-0"><a href="index.html">express-ex  documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">the execution order table</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="the-execution-order-table">
+<h1>the execution order table<a class="headerlink" href="#the-execution-order-table" title="Permalink to this heading">¶</a></h1>
+<div class="graphviz"><object data="_images/graphviz-0afde97d14060a159322411564d446b5eaf5ec0f.svg" type="image/svg+xml" class="graphviz">
+<p class="warning">digraph G {
+    fontname = &quot;Helvetica,Arial,sans-serif&quot;
+    node [fontname = &quot;Courier&quot; shape = rectangle,fixedsize = false, penwidth = 0]
+    edge [fontname = &quot;Courier&quot;, color = darkred]
+    labeljust = &quot;l&quot;;
+    //rankdir = LR;
+
+    subgraph cluster_0 {
+
+    node [style = filled, shape = box,height = 0.2];
+    edge [fontname = &quot;Courier&quot;, color = darkred]
+    color = gray;
+
+
+    subgraph cluster_0_0 {
+    prm_2 [label = &quot;PRM_2048&quot;];
+    &quot;&gt;&quot;
+    prm_2 -&gt; &quot;&gt;&quot;
+    label = &quot;level 0&quot;;
+    }
+
+    subgraph cluster_0_1 {
+    c_20 [label = &quot;20&quot;]
+    c_4 [label = &quot;-4&quot;]
+    sh_2 [label = &quot;[]&quot;];
+    sh_2_ [label = &quot;[]&quot;];
+    //{rank = &quot;same&quot; c_20 sh_2_ c_4 sh_2 }
+    c_20 -&gt; sh_2_
+    c_4 -&gt; sh_2
+    sub_2 [label = &quot;-&quot;]
+
+    ternary [label = &quot;op 0 ? op 1 : op 2&quot;]
+
+    label = &quot;level 1&quot;;
+    }
+
+    subgraph cluster_0_2 {
+    p_2 [label = &quot;+&quot;];
+
+    label = &quot;level 3&quot;;
+    }
+
+
+    prm_2 -&gt; sh_2 -&gt; sub_2
+    prm_2 -&gt; sh_2_ -&gt; sub_2
+    prm_2 -&gt; ternary [label = &quot;op 2&quot;]
+    &quot;&gt;&quot; -&gt; ternary [label = &quot;op 0&quot;]
+    sub_2 -&gt; ternary [label = &quot;op 1&quot;]
+
+    ternary -&gt; p_2
+
+    label = &quot;frequency = 2048 Hz&quot;;
+    }
+
+
+
+    subgraph cluster_1 {
+
+    node [style = filled, shape = box,height = 0.2];
+    edge [fontname = &quot;Courier&quot;, color = darkred];
+    color = gray;
+
+    subgraph cluster_1_0 {
+
+    prm_1 [label = &quot;PRM_4086&quot;];
+    p_1 [label = &quot;+&quot;];
+    &quot;1.0&quot;
+    &quot;cos()&quot;
+
+    label = &quot;level 0&quot;;
+    }
+
+    subgraph cluster_1_1 {
+    small_array
+    c_1 [label = &quot;convolve&quot;];
+
+    m_1 [label = &quot;*&quot;];
+
+    label = &quot;level 1&quot;;
+    }
+
+    subgraph cluster_1_2 {
+    node [style = filled, shape = box,height = 0.2];
+    decim [label = &quot;decimation x2&quot;]
+    label = &quot;level 2&quot;;
+    }
+
+
+    &quot;1.0&quot; -&gt; p_1;
+    small_array -&gt; c_1 -&gt; m_1 -&gt; decim -&gt; p_2;
+
+    prm_1 -&gt; p_1 -&gt; c_1;
+    prm_1 -&gt; &quot;cos()&quot; -&gt; m_1;
+
+    label = &quot;frequency = 4086 Hz&quot;;
+
+    }
+
+
+
+
+    p_2 -&gt; return;
+
+}</p></object></div>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/table.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="nav-item nav-item-0"><a href="index.html">express-ex  documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">the execution order table</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2022, SVK.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 5.0.2.
+    </div>
+  </body>
+</html>

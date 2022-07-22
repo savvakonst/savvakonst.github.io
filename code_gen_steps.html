@@ -1,0 +1,397 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>LLVM IR code generation steps &#8212; express-ex  documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/llvm-theme.css" />
+    <link rel="stylesheet" type="text/css" href="_static/graphviz.css" />
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="nav-item nav-item-0"><a href="index.html">express-ex  documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">LLVM IR code generation steps</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="llvm-ir-code-generation-steps">
+<h1>LLVM IR code generation steps<a class="headerlink" href="#llvm-ir-code-generation-steps" title="Permalink to this heading">¶</a></h1>
+<p>methods like visitEnter() was omitted</p>
+<p class="plantuml">
+<object data="_images/plantuml-abf3dcf291ca00265910c8817aa27123fcf3b154.svg" type="image/svg+xml" style="width:961px;height:782px;background:#FFFFFF;"></object></p>
+</section>
+<section id="exvalue-ifs-class-description">
+<h1>ExValue_ifs class description:<a class="headerlink" href="#exvalue-ifs-class-description" title="Permalink to this heading">¶</a></h1>
+<dl class="cpp class">
+<dt class="sig sig-object cpp" id="_CPPv411ExValue_ifs">
+<span id="_CPPv311ExValue_ifs"></span><span id="_CPPv211ExValue_ifs"></span><span id="ExValue_ifs"></span><span class="target" id="class_ex_value__ifs"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ExValue_ifs</span></span></span><span class="w"> </span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="k"><span class="pre">public</span></span><span class="w"> </span><span class="n"><span class="pre">SmallArr</span></span><a class="headerlink" href="#_CPPv411ExValue_ifs" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Inheritence diagram for ExValue_ifs:</p>
+<figure class="align-default">
+<div align="center" class="align-center"><div class="graphviz"><object data="_images/graphviz-3664849efd2c99cb9f24c34139687c4183d3e806.svg" type="image/svg+xml" class="graphviz">
+<p class="warning">digraph {
+    graph [bgcolor=&quot;#00000000&quot;]
+    node [shape=rectangle style=filled fillcolor=&quot;#FFFFFF&quot; font=Helvetica padding=2]
+    edge [color=&quot;#1414CE&quot;]
+    &quot;4&quot; [label=&quot;CallRecursiveFunctionTemplate&quot; tooltip=&quot;CallRecursiveFunctionTemplate&quot;]
+    &quot;5&quot; [label=&quot;CallTemplate&quot; tooltip=&quot;CallTemplate&quot;]
+    &quot;3&quot; [label=&quot;CallTemplate_ifs&quot; tooltip=&quot;CallTemplate_ifs&quot;]
+    &quot;9&quot; [label=&quot;ExArgument&quot; tooltip=&quot;ExArgument&quot;]
+    &quot;7&quot; [label=&quot;ExConstValue&quot; tooltip=&quot;ExConstValue&quot;]
+    &quot;8&quot; [label=&quot;ExLine&quot; tooltip=&quot;ExLine&quot;]
+    &quot;11&quot; [label=&quot;ExParam&quot; tooltip=&quot;ExParam&quot;]
+    &quot;10&quot; [label=&quot;ExRecursiveArgument&quot; tooltip=&quot;ExRecursiveArgument&quot;]
+    &quot;1&quot; [label=&quot;ExValue_ifs&quot; tooltip=&quot;ExValue_ifs&quot; fillcolor=&quot;#BFBFBF&quot;]
+    &quot;12&quot; [label=&quot;Operation_ifs&quot; tooltip=&quot;Operation_ifs&quot;]
+    &quot;2&quot; [label=&quot;SmallArr&quot; tooltip=&quot;SmallArr&quot;]
+    &quot;6&quot; [label=&quot;TailCallDirectiveTemplate&quot; tooltip=&quot;TailCallDirectiveTemplate&quot;]
+    &quot;4&quot; -&gt; &quot;3&quot; [dir=forward tooltip=&quot;public-inheritance&quot;]
+    &quot;5&quot; -&gt; &quot;3&quot; [dir=forward tooltip=&quot;public-inheritance&quot;]
+    &quot;3&quot; -&gt; &quot;1&quot; [dir=forward tooltip=&quot;public-inheritance&quot;]
+    &quot;9&quot; -&gt; &quot;8&quot; [dir=forward tooltip=&quot;public-inheritance&quot;]
+    &quot;7&quot; -&gt; &quot;1&quot; [dir=forward tooltip=&quot;public-inheritance&quot;]
+    &quot;8&quot; -&gt; &quot;1&quot; [dir=forward tooltip=&quot;public-inheritance&quot;]
+    &quot;11&quot; -&gt; &quot;8&quot; [dir=forward tooltip=&quot;public-inheritance&quot;]
+    &quot;10&quot; -&gt; &quot;9&quot; [dir=forward tooltip=&quot;public-inheritance&quot;]
+    &quot;1&quot; -&gt; &quot;2&quot; [dir=forward tooltip=&quot;public-inheritance&quot;]
+    &quot;12&quot; -&gt; &quot;1&quot; [dir=forward tooltip=&quot;public-inheritance&quot;]
+    &quot;6&quot; -&gt; &quot;3&quot; [dir=forward tooltip=&quot;public-inheritance&quot;]
+}</p></object></div>
+</div>
+</figure>
+<p>Collaboration diagram for ExValue_ifs:</p>
+<figure class="align-default">
+<div align="center" class="align-center"><div class="graphviz"><object data="_images/graphviz-df1e929cc627b4d9ad9b4a462a4fc1a384eb297b.svg" type="image/svg+xml" class="graphviz">
+<p class="warning">digraph {
+    graph [bgcolor=&quot;#00000000&quot;]
+    node [shape=rectangle style=filled fillcolor=&quot;#FFFFFF&quot; font=Helvetica padding=2]
+    edge [color=&quot;#1414CE&quot;]
+    &quot;5&quot; [label=&quot;ExStreamIfs&quot; tooltip=&quot;ExStreamIfs&quot;]
+    &quot;6&quot; [label=&quot;ExTimeInterval&quot; tooltip=&quot;ExTimeInterval&quot;]
+    &quot;1&quot; [label=&quot;ExValue_ifs&quot; tooltip=&quot;ExValue_ifs&quot; fillcolor=&quot;#BFBFBF&quot;]
+    &quot;4&quot; [label=&quot;ParameterIfs&quot; tooltip=&quot;ParameterIfs&quot;]
+    &quot;2&quot; [label=&quot;SmallArr&quot; tooltip=&quot;SmallArr&quot;]
+    &quot;3&quot; [label=&quot;string&quot; tooltip=&quot;string&quot;]
+    &quot;1&quot; -&gt; &quot;2&quot; [dir=forward tooltip=&quot;public-inheritance&quot;]
+    &quot;1&quot; -&gt; &quot;3&quot; [dir=forward tooltip=&quot;usage&quot;]
+    &quot;1&quot; -&gt; &quot;4&quot; [dir=forward tooltip=&quot;usage&quot;]
+    &quot;4&quot; -&gt; &quot;5&quot; [dir=forward tooltip=&quot;usage&quot;]
+    &quot;4&quot; -&gt; &quot;3&quot; [dir=forward tooltip=&quot;usage&quot;]
+    &quot;4&quot; -&gt; &quot;6&quot; [dir=forward tooltip=&quot;usage&quot;]
+}</p></object></div>
+</div>
+</figure>
+<p>Subclassed by CallTemplate_ifs, ExConstValue, ExLine, <a class="reference internal" href="#class_operation__ifs"><span class="std std-ref">Operation_ifs</span></a></p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N11ExValue_ifs15setBufferLengthE8uint64_t">
+<span id="_CPPv3N11ExValue_ifs15setBufferLengthE8uint64_t"></span><span id="_CPPv2N11ExValue_ifs15setBufferLengthE8uint64_t"></span><span id="ExValue_ifs::setBufferLength__uint64_t"></span><span class="target" id="class_ex_value__ifs_1af5016986b77b1ebdb4b510dbc0c42965"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setBufferLength</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">uint64_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">central_length</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N11ExValue_ifs15setBufferLengthE8uint64_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>it is called on Table calculateBufferLength stage, and sets buffer_length_ </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>central_length</strong> – </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N11ExValue_ifs14getAssignedValEb">
+<span id="_CPPv3N11ExValue_ifs14getAssignedValEb"></span><span id="_CPPv2N11ExValue_ifs14getAssignedValEb"></span><span id="ExValue_ifs::getAssignedVal__b"></span><span class="target" id="class_ex_value__ifs_1a8d7471dc785f19a877d1c0367e96a04b"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv411ExValue_ifs" title="ExValue_ifs"><span class="n"><span class="pre">ExValue_ifs</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">getAssignedVal</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">deep</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">false</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N11ExValue_ifs14getAssignedValEb" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>if object is Line object it will return pointer to assigned value otherwise it returns pointer to itself </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>deep</strong> – if is true it will return first non-Line object in case when Line object points to Another Line object </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>pointer to assigned value </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N11ExValue_ifs10visitEnterEP5stackIP11ExValue_ifsEb">
+<span id="_CPPv3N11ExValue_ifs10visitEnterEP5stackIP11ExValue_ifsEb"></span><span id="_CPPv2N11ExValue_ifs10visitEnterEP5stackIP11ExValue_ifsEb"></span><span id="ExValue_ifs::visitEnter__stack:ExValue_ifsP:P.b"></span><span class="target" id="class_ex_value__ifs_1ac4b2d0f4f021d6a28d00b67be3c8739d"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">visitEnter</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">stack</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="#_CPPv411ExValue_ifs" title="ExValue_ifs"><span class="n"><span class="pre">ExValue_ifs</span></span></a><span class="p"><span class="pre">*</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">visitor_stack</span></span>, <span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">set_visited</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">true</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0</span></span><a class="headerlink" href="#_CPPv4N11ExValue_ifs10visitEnterEP5stackIP11ExValue_ifsEb" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>it sets is_visited_ to true if set_visited = true and pushes themself to visitor_stack </p>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-members">Public Members</p>
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N11ExValue_ifs6ds_ty_E">
+<span id="_CPPv3N11ExValue_ifs6ds_ty_E"></span><span id="_CPPv2N11ExValue_ifs6ds_ty_E"></span><span id="ExValue_ifs::ds_ty___DataStructureTypeEnC"></span><span class="target" id="class_ex_value__ifs_1a4924b469288ac07bc5ead6062a411c4f"></span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">DataStructureTypeEn</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ds_ty_</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="n"><span class="pre">DataStructureTypeEn</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">kConstant</span></span><a class="headerlink" href="#_CPPv4N11ExValue_ifs6ds_ty_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>data structure type </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N11ExValue_ifs10temp_type_E">
+<span id="_CPPv3N11ExValue_ifs10temp_type_E"></span><span id="_CPPv2N11ExValue_ifs10temp_type_E"></span><span id="ExValue_ifs::temp_type___TypeEn"></span><span class="target" id="class_ex_value__ifs_1a91ace8cc5f2746c349187658e689f50f"></span><span class="n"><span class="pre">TypeEn</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">temp_type_</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="n"><span class="pre">TypeEn</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">unknown_jty</span></span><a class="headerlink" href="#_CPPv4N11ExValue_ifs10temp_type_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>it is used to const value calculation inside functions with recursive tail call </p>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-protected-attributes">Protected Attributes</p>
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N11ExValue_ifs7length_E">
+<span id="_CPPv3N11ExValue_ifs7length_E"></span><span id="_CPPv2N11ExValue_ifs7length_E"></span><span id="ExValue_ifs::length___length_tC"></span><span class="target" id="class_ex_value__ifs_1a85709b28c34aa332bd0ff19b727cb4ed"></span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">length_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">length_</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">1</span></span><a class="headerlink" href="#_CPPv4N11ExValue_ifs7length_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>for synchronous kLargeArr it represents frequency of data, otherwise it represents length of data </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N11ExValue_ifs6level_E">
+<span id="_CPPv3N11ExValue_ifs6level_E"></span><span id="_CPPv2N11ExValue_ifs6level_E"></span><span id="ExValue_ifs::level___int64_t"></span><span class="target" id="class_ex_value__ifs_1ae130dc53bedb4c4c57e7de6f229ab4aa"></span><span class="n"><span class="pre">int64_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">level_</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0</span></span><a class="headerlink" href="#_CPPv4N11ExValue_ifs6level_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>it is used to determine when buffer usage is necessary, any operand that doesn’t have the same level_ is marked as buffered by setting the operand’s is_buffered_ field to true; </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N11ExValue_ifs19left_buffer_length_E">
+<span id="_CPPv3N11ExValue_ifs19left_buffer_length_E"></span><span id="_CPPv2N11ExValue_ifs19left_buffer_length_E"></span><span id="ExValue_ifs::left_buffer_length___uint64_t"></span><span class="target" id="class_ex_value__ifs_1a2ae947ebe87d7a62ae4f7feda1a94882"></span><span class="n"><span class="pre">uint64_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">left_buffer_length_</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0</span></span><a class="headerlink" href="#_CPPv4N11ExValue_ifs19left_buffer_length_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>it is set only when Table::reverseTraversal() is called, by calling setBufferBordersLength(). </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N11ExValue_ifs20right_buffer_length_E">
+<span id="_CPPv3N11ExValue_ifs20right_buffer_length_E"></span><span id="_CPPv2N11ExValue_ifs20right_buffer_length_E"></span><span id="ExValue_ifs::right_buffer_length___uint64_t"></span><span class="target" id="class_ex_value__ifs_1aaab5eaa657f4c2bb9e83081ca4c973ea"></span><span class="n"><span class="pre">uint64_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">right_buffer_length_</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0</span></span><a class="headerlink" href="#_CPPv4N11ExValue_ifs20right_buffer_length_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>it is set only when Table::reverseTraversal() is called, by calling setBufferBordersLength(). </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N11ExValue_ifs14buffer_length_E">
+<span id="_CPPv3N11ExValue_ifs14buffer_length_E"></span><span id="_CPPv2N11ExValue_ifs14buffer_length_E"></span><span id="ExValue_ifs::buffer_length___uint64_t"></span><span class="target" id="class_ex_value__ifs_1a510be57314d66f14b1b21da143baa65c"></span><span class="n"><span class="pre">uint64_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">buffer_length_</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0</span></span><a class="headerlink" href="#_CPPv4N11ExValue_ifs14buffer_length_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>it is set oly by setBufferLength on Table calculateBufferLength stage and only for</p>
+<p><p><p class="plantuml">
+<object data="_images/plantuml-b451ef3a99f5d69dd62f2f15a3de5c394575fab2.svg" type="image/svg+xml" style="width:628px;height:276px;background:#FFFFFF;"></object></p>
+</p>
+ </p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+</section>
+<section id="operation-ifs-class-description">
+<h1>Operation_ifs class description:<a class="headerlink" href="#operation-ifs-class-description" title="Permalink to this heading">¶</a></h1>
+<dl class="cpp class">
+<dt class="sig sig-object cpp" id="_CPPv413Operation_ifs">
+<span id="_CPPv313Operation_ifs"></span><span id="_CPPv213Operation_ifs"></span><span id="Operation_ifs"></span><span class="target" id="class_operation__ifs"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Operation_ifs</span></span></span><span class="w"> </span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="k"><span class="pre">public</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv411ExValue_ifs" title="ExValue_ifs"><span class="n"><span class="pre">ExValue_ifs</span></span></a><a class="headerlink" href="#_CPPv413Operation_ifs" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Inheritence diagram for Operation_ifs:</p>
+<figure class="align-default">
+<div align="center" class="align-center"><div class="graphviz"><object data="_images/graphviz-ea049712f738876432014130aeec11b1b497d99f.svg" type="image/svg+xml" class="graphviz">
+<p class="warning">digraph {
+    graph [bgcolor=&quot;#00000000&quot;]
+    node [shape=rectangle style=filled fillcolor=&quot;#FFFFFF&quot; font=Helvetica padding=2]
+    edge [color=&quot;#1414CE&quot;]
+    &quot;2&quot; [label=&quot;ExValue_ifs&quot; tooltip=&quot;ExValue_ifs&quot;]
+    &quot;1&quot; [label=&quot;Operation_ifs&quot; tooltip=&quot;Operation_ifs&quot; fillcolor=&quot;#BFBFBF&quot;]
+    &quot;3&quot; [label=&quot;SmallArr&quot; tooltip=&quot;SmallArr&quot;]
+    &quot;2&quot; -&gt; &quot;3&quot; [dir=forward tooltip=&quot;public-inheritance&quot;]
+    &quot;1&quot; -&gt; &quot;2&quot; [dir=forward tooltip=&quot;public-inheritance&quot;]
+}</p></object></div>
+</div>
+</figure>
+<p>Collaboration diagram for Operation_ifs:</p>
+<figure class="align-default">
+<div align="center" class="align-center"><div class="graphviz"><object data="_images/graphviz-b4e7ac103a027af0961894e309466880e56df534.svg" type="image/svg+xml" class="graphviz">
+<p class="warning">digraph {
+    graph [bgcolor=&quot;#00000000&quot;]
+    node [shape=rectangle style=filled fillcolor=&quot;#FFFFFF&quot; font=Helvetica padding=2]
+    edge [color=&quot;#1414CE&quot;]
+    &quot;6&quot; [label=&quot;ExStreamIfs&quot; tooltip=&quot;ExStreamIfs&quot;]
+    &quot;7&quot; [label=&quot;ExTimeInterval&quot; tooltip=&quot;ExTimeInterval&quot;]
+    &quot;2&quot; [label=&quot;ExValue_ifs&quot; tooltip=&quot;ExValue_ifs&quot;]
+    &quot;1&quot; [label=&quot;Operation_ifs&quot; tooltip=&quot;Operation_ifs&quot; fillcolor=&quot;#BFBFBF&quot;]
+    &quot;5&quot; [label=&quot;ParameterIfs&quot; tooltip=&quot;ParameterIfs&quot;]
+    &quot;3&quot; [label=&quot;SmallArr&quot; tooltip=&quot;SmallArr&quot;]
+    &quot;4&quot; [label=&quot;string&quot; tooltip=&quot;string&quot;]
+    &quot;2&quot; -&gt; &quot;3&quot; [dir=forward tooltip=&quot;public-inheritance&quot;]
+    &quot;2&quot; -&gt; &quot;4&quot; [dir=forward tooltip=&quot;usage&quot;]
+    &quot;2&quot; -&gt; &quot;5&quot; [dir=forward tooltip=&quot;usage&quot;]
+    &quot;1&quot; -&gt; &quot;2&quot; [dir=forward tooltip=&quot;public-inheritance&quot;]
+    &quot;5&quot; -&gt; &quot;6&quot; [dir=forward tooltip=&quot;usage&quot;]
+    &quot;5&quot; -&gt; &quot;4&quot; [dir=forward tooltip=&quot;usage&quot;]
+    &quot;5&quot; -&gt; &quot;7&quot; [dir=forward tooltip=&quot;usage&quot;]
+}</p></object></div>
+</div>
+</figure>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N13Operation_ifs13Operation_ifsE6TypeEn6TypeEn8OpCodeEnPK11ExValue_ifs">
+<span id="_CPPv3N13Operation_ifs13Operation_ifsE6TypeEn6TypeEn8OpCodeEnPK11ExValue_ifs"></span><span id="_CPPv2N13Operation_ifs13Operation_ifsE6TypeEn6TypeEn8OpCodeEnPK11ExValue_ifs"></span><span id="Operation_ifs::Operation_ifs__TypeEn.TypeEn.OpCodeEn.ExValue_ifsCP"></span><span class="target" id="class_operation__ifs_1a4ee8525186fd4d72629569a370cffaa3"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Operation_ifs</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">TypeEn</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">ty</span></span>, <span class="n"><span class="pre">TypeEn</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">time_ty</span></span>, <span class="n"><span class="pre">OpCodeEn</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">op</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv411ExValue_ifs" title="ExValue_ifs"><span class="n"><span class="pre">ExValue_ifs</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">var</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N13Operation_ifs13Operation_ifsE6TypeEn6TypeEn8OpCodeEnPK11ExValue_ifs" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>initialize op_code_, ds_ty_ and length_ fields </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N13Operation_ifs21visitEnterSetupBufferEP5stackIP11ExValue_ifsE">
+<span id="_CPPv3N13Operation_ifs21visitEnterSetupBufferEP5stackIP11ExValue_ifsE"></span><span id="_CPPv2N13Operation_ifs21visitEnterSetupBufferEP5stackIP11ExValue_ifsE"></span><span id="Operation_ifs::visitEnterSetupBuffer__stack:ExValue_ifsP:P"></span><span class="target" id="class_operation__ifs_1a488cb28477d58008f9498c0510369354"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">visitEnterSetupBuffer</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">stack</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="#_CPPv411ExValue_ifs" title="ExValue_ifs"><span class="n"><span class="pre">ExValue_ifs</span></span></a><span class="p"><span class="pre">*</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">visitor_stack</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N13Operation_ifs21visitEnterSetupBufferEP5stackIP11ExValue_ifsE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>it is called by <a class="reference internal" href="#class_operation__ifs_1aac11d25fa1bd146c116bf8cdb887637c"><span class="std std-ref">reverseTraversalVisitEnter()</span></a> in simplification stage, when typed Body has been already built. This is used to define buffer bounds. Typically this is overridden by operations which implement operators like convolve, neighbour point (data shift), etc. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N13Operation_ifs21visitEnterStackUpdateEP5stackIP11ExValue_ifsE">
+<span id="_CPPv3N13Operation_ifs21visitEnterStackUpdateEP5stackIP11ExValue_ifsE"></span><span id="_CPPv2N13Operation_ifs21visitEnterStackUpdateEP5stackIP11ExValue_ifsE"></span><span id="Operation_ifs::visitEnterStackUpdate__stack:ExValue_ifsP:P"></span><span class="target" id="class_operation__ifs_1ab26dbb036179ba295d275a09ea6a3430"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">visitEnterStackUpdate</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">stack</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="#_CPPv411ExValue_ifs" title="ExValue_ifs"><span class="n"><span class="pre">ExValue_ifs</span></span></a><span class="p"><span class="pre">*</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">visitor_stack</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N13Operation_ifs21visitEnterStackUpdateEP5stackIP11ExValue_ifsE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>it pushes operation operands/arguments to visitor_stack, it is called by <a class="reference internal" href="#class_operation__ifs_1a57d5b35aa927aec1377abf7227a5cd1a"><span class="std std-ref">visitEnter()</span></a> </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>visitor_stack</strong> – </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N13Operation_ifs10visitEnterEP5stackIP11ExValue_ifsEb">
+<span id="_CPPv3N13Operation_ifs10visitEnterEP5stackIP11ExValue_ifsEb"></span><span id="_CPPv2N13Operation_ifs10visitEnterEP5stackIP11ExValue_ifsEb"></span><span id="Operation_ifs::visitEnter__stack:ExValue_ifsP:P.b"></span><span class="target" id="class_operation__ifs_1a57d5b35aa927aec1377abf7227a5cd1a"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">visitEnter</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">stack</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="#_CPPv411ExValue_ifs" title="ExValue_ifs"><span class="n"><span class="pre">ExValue_ifs</span></span></a><span class="p"><span class="pre">*</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">visitor_stack</span></span>, <span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">set_visited</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">true</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4N13Operation_ifs10visitEnterEP5stackIP11ExValue_ifsEb" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>it sets is_visited_ to true if set_visited = true, pushes themself to visitor_stack and than call <a class="reference internal" href="#class_operation__ifs_1ab26dbb036179ba295d275a09ea6a3430"><span class="std std-ref">visitEnterStackUpdate()</span></a> which pushes operation operands to visitor_stack is_visited_ variable must be set to false at the begin of function </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>set_visited</strong> – </p></li>
+<li><p><strong>visitor_stack</strong> – </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N13Operation_ifs26reverseTraversalVisitEnterEP5stackIP11ExValue_ifsE">
+<span id="_CPPv3N13Operation_ifs26reverseTraversalVisitEnterEP5stackIP11ExValue_ifsE"></span><span id="_CPPv2N13Operation_ifs26reverseTraversalVisitEnterEP5stackIP11ExValue_ifsE"></span><span id="Operation_ifs::reverseTraversalVisitEnter__stack:ExValue_ifsP:P"></span><span class="target" id="class_operation__ifs_1aac11d25fa1bd146c116bf8cdb887637c"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">reverseTraversalVisitEnter</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">stack</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="#_CPPv411ExValue_ifs" title="ExValue_ifs"><span class="n"><span class="pre">ExValue_ifs</span></span></a><span class="p"><span class="pre">*</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">visitor_stack</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4N13Operation_ifs26reverseTraversalVisitEnterEP5stackIP11ExValue_ifsE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>It is called in simplification stage when typed Body has been already built. it pushes to visitor stack and calls commonMarkUnusedVisitEnter(stack&lt;ExValue_ifs*&gt;* visitor_stack) which increase usage counter and visitEnterSetupBuffer(visitor_stack); <p><p class="plantuml">
+<object data="_images/plantuml-30f4fcb7e024ee54e6715fa83e1979e5b8a2595f.svg" type="image/svg+xml" style="width:500px;height:254px;background:#FFFFFF;"></object></p>
+</p>
+ </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>visitor_stack</strong> – </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N13Operation_ifs16genBodyVisitExitEP14BodyGenContext">
+<span id="_CPPv3N13Operation_ifs16genBodyVisitExitEP14BodyGenContext"></span><span id="_CPPv2N13Operation_ifs16genBodyVisitExitEP14BodyGenContext"></span><span id="Operation_ifs::genBodyVisitExit__BodyGenContextP"></span><span class="target" id="class_operation__ifs_1afd73adc38f76286075b0ae6d3d307a1c"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">genBodyVisitExit</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">BodyGenContext</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">context</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4N13Operation_ifs16genBodyVisitExitEP14BodyGenContext" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>is used for body generation (type inference, const expression execution, etc.). is_visited_ variable must be set to false at the begin of function </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>context</strong> – </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N13Operation_ifs14getAssignedValEb">
+<span id="_CPPv3N13Operation_ifs14getAssignedValEb"></span><span id="_CPPv2N13Operation_ifs14getAssignedValEb"></span><span id="Operation_ifs::getAssignedVal__b"></span><span class="target" id="class_operation__ifs_1a26458942f41aabfa4ac7773a6ac966bf"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv411ExValue_ifs" title="ExValue_ifs"><span class="n"><span class="pre">ExValue_ifs</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">getAssignedVal</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">deep</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">false</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4N13Operation_ifs14getAssignedValEb" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>if object is Line object it will return pointer to assigned value otherwise it returns pointer to itself </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>deep</strong> – if is true it will return first non-Line object in case when Line object points to Another Line object </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>pointer to assigned value </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N13Operation_ifs7setupIRER11IRGenerator">
+<span id="_CPPv3N13Operation_ifs7setupIRER11IRGenerator"></span><span id="_CPPv2N13Operation_ifs7setupIRER11IRGenerator"></span><span id="Operation_ifs::setupIR__IRGeneratorR"></span><span class="target" id="class_operation__ifs_1ad9cd8aa34901cc572fccd603493ed7f0"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setupIR</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">IRGenerator</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">builder</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4N13Operation_ifs7setupIRER11IRGenerator" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>used fo ir generation, in the end of function implementation <a class="reference internal" href="#class_operation__ifs_1a27988204832b535cfa0bd1b7f37e575f"><span class="std std-ref">finishSetupIR()</span></a> must be called </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>builder</strong> – </p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-protected-functions">Protected Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N13Operation_ifs13finishSetupIRER11IRGenerator">
+<span id="_CPPv3N13Operation_ifs13finishSetupIRER11IRGenerator"></span><span id="_CPPv2N13Operation_ifs13finishSetupIRER11IRGenerator"></span><span id="Operation_ifs::finishSetupIR__IRGeneratorR"></span><span class="target" id="class_operation__ifs_1a27988204832b535cfa0bd1b7f37e575f"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">finishSetupIR</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">IRGenerator</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">builder</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N13Operation_ifs13finishSetupIRER11IRGenerator" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>must be called in the end of <a class="reference internal" href="#class_operation__ifs_1ad9cd8aa34901cc572fccd603493ed7f0"><span class="std std-ref">setupIR()</span></a> </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>builder</strong> – </p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h3><a href="index.html">Table of Contents</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">LLVM IR code generation steps</a></li>
+<li><a class="reference internal" href="#exvalue-ifs-class-description">ExValue_ifs class description:</a></li>
+<li><a class="reference internal" href="#operation-ifs-class-description">Operation_ifs class description:</a></li>
+</ul>
+
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/code_gen_steps.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="nav-item nav-item-0"><a href="index.html">express-ex  documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">LLVM IR code generation steps</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2022, SVK.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 5.0.2.
+    </div>
+  </body>
+</html>

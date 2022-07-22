@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" height="782px" preserveAspectRatio="none" style="width:961px;height:782px;background:#FFFFFF;" version="1.1" viewBox="0 0 961 782" width="961px" zoomAndPan="magnify"><defs/><g><rect fill="#FFFFFF" height="218.8828" style="stroke:#181818;stroke-width:1.0;" width="10" x="214" y="87.5703"/><rect fill="#FFFFFF" height="58.3516" style="stroke:#181818;stroke-width:1.0;" width="10" x="214" y="336.8047"/><rect fill="#FFFFFF" height="284.9375" style="stroke:#181818;stroke-width:1.0;" width="10" x="214" y="425.5078"/><rect fill="#FFFFFF" height="58.8672" style="stroke:#181818;stroke-width:1.0;" width="10" x="336" y="127.9219"/><rect fill="#FFFFFF" height="30.3516" style="stroke:#181818;stroke-width:1.0;" width="10" x="336" y="245.75"/><rect fill="#FFFFFF" height="14" style="stroke:#181818;stroke-width:1.0;" width="10" x="443" y="367.1563"/><rect fill="#FFFFFF" height="163.5313" style="stroke:#181818;stroke-width:1.0;" width="10" x="443" y="455.8594"/><rect fill="#FFFFFF" height="14" style="stroke:#181818;stroke-width:1.0;" width="10" x="579" y="546.4297"/><rect fill="#FFFFFF" height="30.3516" style="stroke:#181818;stroke-width:1.0;" width="10" x="686.5" y="649.7422"/><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="27" x2="27" y1="55.2188" y2="728.4453"/><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="219" x2="219" y1="55.2188" y2="728.4453"/><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="341" x2="341" y1="126.875" y2="728.4453"/><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="448" x2="448" y1="169.4844" y2="728.4453"/><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="584" x2="584" y1="212.0938" y2="728.4453"/><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="691" x2="691" y1="503.9688" y2="728.4453"/><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="874" x2="874" y1="585.7344" y2="728.4453"/><rect fill="#E2E2F0" height="31.6094" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="44" x="5" y="22.6094"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="30" x="12" y="44.1426">User</text><rect fill="#E2E2F0" height="31.6094" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="44" x="5" y="727.4453"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="30" x="12" y="748.9785">User</text><rect fill="#E2E2F0" height="31.6094" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="92" x="173" y="22.6094"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="78" x="180" y="44.1426">Express_ex:</text><rect fill="#E2E2F0" height="31.6094" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="92" x="173" y="727.4453"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="78" x="180" y="748.9785">Express_ex:</text><rect fill="#E2E2F0" height="31.6094" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="84" x="299" y="727.4453"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="70" x="306" y="748.9785">KexParser:</text><rect fill="#E2E2F0" height="31.6094" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="110" x="393" y="727.4453"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="96" x="400" y="748.9785">BodyTemplate:</text><rect fill="#E2E2F0" height="31.6094" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="142" x="513" y="727.4453"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="128" x="520" y="748.9785">ExValue_ifs: first set</text><rect fill="#E2E2F0" height="49.2188" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="53" x="665" y="727.4453"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="36" x="673.5" y="748.9785">Body:</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="39" x="672" y="766.5879">body_</text><rect fill="#E2E2F0" height="31.6094" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="161" x="794" y="727.4453"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="147" x="801" y="748.9785">ExValue_ifs:second set</text><rect fill="#FFFFFF" height="218.8828" style="stroke:#181818;stroke-width:1.0;" width="10" x="214" y="87.5703"/><rect fill="#FFFFFF" height="58.3516" style="stroke:#181818;stroke-width:1.0;" width="10" x="214" y="336.8047"/><rect fill="#FFFFFF" height="284.9375" style="stroke:#181818;stroke-width:1.0;" width="10" x="214" y="425.5078"/><rect fill="#FFFFFF" height="58.8672" style="stroke:#181818;stroke-width:1.0;" width="10" x="336" y="127.9219"/><rect fill="#FFFFFF" height="30.3516" style="stroke:#181818;stroke-width:1.0;" width="10" x="336" y="245.75"/><rect fill="#FFFFFF" height="14" style="stroke:#181818;stroke-width:1.0;" width="10" x="443" y="367.1563"/><rect fill="#FFFFFF" height="163.5313" style="stroke:#181818;stroke-width:1.0;" width="10" x="443" y="455.8594"/><rect fill="#FFFFFF" height="14" style="stroke:#181818;stroke-width:1.0;" width="10" x="579" y="546.4297"/><rect fill="#FFFFFF" height="30.3516" style="stroke:#181818;stroke-width:1.0;" width="10" x="686.5" y="649.7422"/><polygon fill="#181818" points="202,83.5703,212,87.5703,202,91.5703,206,87.5703" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="27" x2="208" y1="87.5703" y2="87.5703"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="58" x="34" y="82.7139">parseText</text><polygon fill="#181818" points="287,113.9219,297,117.9219,287,121.9219,291,117.9219" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="224" x2="293" y1="117.9219" y2="117.9219"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="23" x="231" y="113.0654">new</text><rect fill="#E2E2F0" height="31.6094" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="84" x="299" y="95.5703"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="70" x="306" y="117.1035">KexParser:</text><polygon fill="#181818" points="381,156.5313,391,160.5313,381,164.5313,385,160.5313" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="346" x2="387" y1="160.5313" y2="160.5313"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="23" x="353" y="155.6748">new</text><rect fill="#E2E2F0" height="31.6094" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="110" x="393" y="138.1797"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="96" x="400" y="159.7129">BodyTemplate:</text><polygon fill="#181818" points="501,182.7891,511,186.7891,501,190.7891,505,186.7891" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="341" x2="507" y1="186.7891" y2="186.7891"/><rect fill="#E2E2F0" height="31.6094" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="142" x="513" y="180.7891"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="128" x="520" y="202.3223">ExValue_ifs: first set</text><polygon fill="#181818" points="324,241.75,334,245.75,324,249.75,328,245.75" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="224" x2="330" y1="245.75" y2="245.75"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="90" x="231" y="240.8936">getCurrentBody</text><polygon fill="#181818" points="235,272.1016,225,276.1016,235,280.1016,231,276.1016" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="229" x2="340" y1="276.1016" y2="276.1016"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="88" x="241" y="271.2451">BodyTemplate:</text><polygon fill="#181818" points="38,302.4531,28,306.4531,38,310.4531,34,306.4531" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="32" x2="218" y1="306.4531" y2="306.4531"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="28" x="44" y="301.5967">bool:</text><polygon fill="#181818" points="202,332.8047,212,336.8047,202,340.8047,206,336.8047" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="27" x2="208" y1="336.8047" y2="336.8047"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="168" x="34" y="331.9482">getParameterLinkNamesMap</text><polygon fill="#181818" points="431,363.1563,441,367.1563,431,371.1563,435,367.1563" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="224" x2="437" y1="367.1563" y2="367.1563"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="151" x="231" y="362.2998">: getParameterLinkNames</text><polygon fill="#181818" points="235,377.1563,225,381.1563,235,385.1563,231,381.1563" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="229" x2="447" y1="381.1563" y2="381.1563"/><polygon fill="#181818" points="38,391.1563,28,395.1563,38,399.1563,34,395.1563" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="32" x2="218" y1="395.1563" y2="395.1563"/><polygon fill="#181818" points="202,421.5078,212,425.5078,202,429.5078,206,425.5078" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="27" x2="208" y1="425.5078" y2="425.5078"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="85" x="34" y="420.6514">setParameters</text><polygon fill="#181818" points="431,451.8594,441,455.8594,431,459.8594,435,455.8594" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="224" x2="437" y1="455.8594" y2="455.8594"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="121" x="231" y="451.0029">genBodyByTemplate</text><polygon fill="#181818" points="653,482.2109,663,486.2109,653,490.2109,657,486.2109" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="453" x2="659" y1="486.2109" y2="486.2109"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="23" x="460" y="481.3545">new</text><rect fill="#E2E2F0" height="49.2188" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="53" x="665" y="463.8594"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="36" x="673.5" y="485.3926">Body:</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="39" x="672" y="503.002">body_</text><polygon fill="#181818" points="567,542.4297,577,546.4297,567,550.4297,571,546.4297" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="453" x2="573" y1="546.4297" y2="546.4297"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="100" x="460" y="541.5732">genBodyVisitExit</text><polygon fill="#181818" points="782,556.4297,792,560.4297,782,564.4297,786,560.4297" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="584" x2="788" y1="560.4297" y2="560.4297"/><rect fill="#E2E2F0" height="31.6094" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="161" x="794" y="554.4297"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="147" x="801" y="575.9629">ExValue_ifs:second set</text><polygon fill="#181818" points="235,615.3906,225,619.3906,235,623.3906,231,619.3906" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="229" x2="447" y1="619.3906" y2="619.3906"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="34" x="241" y="614.5342">Body:</text><polygon fill="#181818" points="674.5,645.7422,684.5,649.7422,674.5,653.7422,678.5,649.7422" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="224" x2="680.5" y1="649.7422" y2="649.7422"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="97" x="231" y="644.8857">reverseTraversal</text><polygon fill="#181818" points="862.5,676.0938,872.5,680.0938,862.5,684.0938,866.5,680.0938" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="691.5" x2="868.5" y1="680.0938" y2="680.0938"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="154" x="698.5" y="675.2373">reverseTraversalVisitEnter</text><polygon fill="#181818" points="38,706.4453,28,710.4453,38,714.4453,34,710.4453" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="32" x2="218" y1="710.4453" y2="710.4453"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="28" x="44" y="705.5889">bool:</text><!--MD5=[837eab7d484f0a7e39dd7e34f63dc5d0]
+@startuml
+User-> "Express_ex:": parseText
+
+activate "Express_ex:"
+
+    "Express_ex:" -> "KexParser:"**: new
+    activate "KexParser:"
+
+        "KexParser:"  -> "BodyTemplate:" ** : new
+        "KexParser:" -> "ExValue_ifs: first set" ** :
+
+        deactivate "KexParser:"
+
+            "Express_ex:" -> "KexParser:":getCurrentBody
+
+        activate "KexParser:"
+
+        "KexParser:"->"Express_ex:":BodyTemplate:
+
+    deactivate "KexParser:"
+
+    "Express_ex:" -> User: bool:
+deactivate "Express_ex:"
+
+/'- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -'/
+
+User-> "Express_ex:": getParameterLinkNamesMap
+
+activate "Express_ex:"
+
+    "Express_ex:" -> "BodyTemplate:":: getParameterLinkNames
+
+    activate "BodyTemplate:"
+        "BodyTemplate:"->"Express_ex:"
+    deactivate "BodyTemplate:"
+
+    "Express_ex:" -> User:
+deactivate "Express_ex:"
+
+/'- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -'/
+
+User-> "Express_ex:": setParameters
+activate "Express_ex:"
+    "Express_ex:"-> "BodyTemplate:" : genBodyByTemplate
+    activate "BodyTemplate:"
+
+        "BodyTemplate:"-> "Body:\nbody_" ** : new
+
+        "BodyTemplate:" -> "ExValue_ifs: first set": genBodyVisitExit
+
+        activate "ExValue_ifs: first set"
+            "ExValue_ifs: first set" -> "ExValue_ifs:second set" **
+        deactivate "ExValue_ifs: first set"
+
+        "BodyTemplate:"->"Express_ex:" : Body:
+
+    deactivate "BodyTemplate:"
+
+    "Express_ex:" -> "Body:\nbody_": reverseTraversal
+
+    activate "Body:\nbody_"
+
+        "Body:\nbody_" -> "ExValue_ifs:second set":reverseTraversalVisitEnter
+
+    deactivate "Body:\nbody_"
+
+    "Express_ex:" -> User: bool:
+
+deactivate "Express_ex:"
+
+@enduml
+
+@startuml
+User-> "Express_ex:": parseText
+
+activate "Express_ex:"
+
+    "Express_ex:" -> "KexParser:"**: new
+    activate "KexParser:"
+
+        "KexParser:"  -> "BodyTemplate:" ** : new
+        "KexParser:" -> "ExValue_ifs: first set" ** :
+
+        deactivate "KexParser:"
+
+            "Express_ex:" -> "KexParser:":getCurrentBody
+
+        activate "KexParser:"
+
+        "KexParser:"->"Express_ex:":BodyTemplate:
+
+    deactivate "KexParser:"
+
+    "Express_ex:" -> User: bool:
+deactivate "Express_ex:"
+
+
+User-> "Express_ex:": getParameterLinkNamesMap
+
+activate "Express_ex:"
+
+    "Express_ex:" -> "BodyTemplate:":: getParameterLinkNames
+
+    activate "BodyTemplate:"
+        "BodyTemplate:"->"Express_ex:"
+    deactivate "BodyTemplate:"
+
+    "Express_ex:" -> User:
+deactivate "Express_ex:"
+
+
+User-> "Express_ex:": setParameters
+activate "Express_ex:"
+    "Express_ex:"-> "BodyTemplate:" : genBodyByTemplate
+    activate "BodyTemplate:"
+
+        "BodyTemplate:"-> "Body:\nbody_" ** : new
+
+        "BodyTemplate:" -> "ExValue_ifs: first set": genBodyVisitExit
+
+        activate "ExValue_ifs: first set"
+            "ExValue_ifs: first set" -> "ExValue_ifs:second set" **
+        deactivate "ExValue_ifs: first set"
+
+        "BodyTemplate:"->"Express_ex:" : Body:
+
+    deactivate "BodyTemplate:"
+
+    "Express_ex:" -> "Body:\nbody_": reverseTraversal
+
+    activate "Body:\nbody_"
+
+        "Body:\nbody_" -> "ExValue_ifs:second set":reverseTraversalVisitEnter
+
+    deactivate "Body:\nbody_"
+
+    "Express_ex:" -> User: bool:
+
+deactivate "Express_ex:"
+
+@enduml
+
+PlantUML version 1.2022.6(Tue Jun 21 20:34:49 MSK 2022)
+(MIT source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Default Encoding: Cp1251
+Language: ru
+Country: RU
+--></g></svg>

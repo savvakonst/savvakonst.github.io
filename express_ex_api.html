@@ -1,0 +1,376 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>main part of api: &#8212; express-ex  documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/llvm-theme.css" />
+    <link rel="stylesheet" type="text/css" href="_static/graphviz.css" />
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="nav-item nav-item-0"><a href="index.html">express-ex  documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">main part of api:</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="main-part-of-api">
+<h1>main part of api:<a class="headerlink" href="#main-part-of-api" title="Permalink to this heading">¶</a></h1>
+<dl class="cpp class">
+<dt class="sig sig-object cpp" id="_CPPv410Express_ex">
+<span id="_CPPv310Express_ex"></span><span id="_CPPv210Express_ex"></span><span id="Express_ex"></span><span class="target" id="class_express__ex"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Express_ex</span></span></span><a class="headerlink" href="#_CPPv410Express_ex" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>this is the main interface to deal with express. Firstly you should use parseText, it makes primary syntax analysis. Than you are able to get map of link names by using getParameterLinkNamesMap. For next step of full semantic analysis <a class="reference internal" href="#class_express__ex"><span class="std std-ref">Express_ex</span></a> instance require input <a class="reference internal" href="#class_parameter_ifs"><span class="std std-ref">ParameterIfs</span></a> instances via <a class="reference internal" href="#class_express__ex_1ad8245582ce227e4b47283241ee652ee0"><span class="std std-ref">setParameters()</span></a> to determine types of parameters (sync/async, data type, time type ,frequency is exists) and consequently types of all variables and outputs. After steps mentioned above it is possible to fetch output parameters by <a class="reference internal" href="#class_express__ex_1a1cf49cb68cb2433eb45bb0c0a4be7cdd"><span class="std std-ref">getOutputParameters()</span></a>. Now it is possible to configure parameters, just edit received via <a class="reference internal" href="#class_express__ex_1a1cf49cb68cb2433eb45bb0c0a4be7cdd"><span class="std std-ref">getOutputParameters()</span></a> instances of <a class="reference internal" href="#class_parameter_ifs"><span class="std std-ref">ParameterIfs</span></a>. Next use <a class="reference internal" href="#class_express__ex_1aae3479ff6b965b68b2a30826be55b25c"><span class="std std-ref">genJit()</span></a> to build and link; and last step is <a class="reference internal" href="#class_express__ex_1a7f0ea95f05034a6da0a9c277d7d771d5"><span class="std std-ref">run()</span></a>; </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N10Express_ex9parseTextERKNSt6stringEbNSt4listINSt4pairINSt6stringEbEEEE">
+<span id="_CPPv3N10Express_ex9parseTextERKNSt6stringEbNSt4listINSt4pairINSt6stringEbEEEE"></span><span id="_CPPv2N10Express_ex9parseTextERKNSt6stringEbNSt4listINSt4pairINSt6stringEbEEEE"></span><span id="Express_ex::parseText__ssCR.b.std::list:std::pair:ss.b::"></span><span class="target" id="class_express__ex_1a91c3157e627820a896dea60bda620739"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">parseText</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">str</span></span>, <span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">is_file_name</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">false</span></span>, <span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">list</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">pair</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="p"><span class="pre">&gt;</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">lib_str_list</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="p"><span class="pre">{</span></span><span class="p"><span class="pre">}</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N10Express_ex9parseTextERKNSt6stringEbNSt4listINSt4pairINSt6stringEbEEEE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>str</strong> – main source code or filename of file with main source code </p></li>
+<li><p><strong>is_file_name</strong> – </p></li>
+<li><p><strong>lib_str_list</strong> – list of pairs.”first” part of a pair is either a filename of library or a source texts itself, “second” part of a pair is a bool value, which is true if “first” is filename </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>true if successful </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK10Express_ex24getParameterLinkNamesMapEb">
+<span id="_CPPv3NK10Express_ex24getParameterLinkNamesMapEb"></span><span id="_CPPv2NK10Express_ex24getParameterLinkNamesMapEb"></span><span id="Express_ex::getParameterLinkNamesMap__bC"></span><span class="target" id="class_express__ex_1a8f5a33faddc777210fa7b1aa2448c8fc"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">map</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getParameterLinkNamesMap</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">hide_unused</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">false</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK10Express_ex24getParameterLinkNamesMapEb" title="Permalink to this definition">¶</a><br /></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>map&lt; name ,link name&gt;. name - code name, link name - parameter name. example: <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">param(&quot;#1_A01__1&quot;)</span></code> where x - name, #1_A01__1 - link name. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N10Express_ex13setParametersERKNSt3mapINSt6stringEP12ParameterIfsEE">
+<span id="_CPPv3N10Express_ex13setParametersERKNSt3mapINSt6stringEP12ParameterIfsEE"></span><span id="_CPPv2N10Express_ex13setParametersERKNSt3mapINSt6stringEP12ParameterIfsEE"></span><span id="Express_ex::setParameters__std::map:ss.ParameterIfsP:CR"></span><span class="target" id="class_express__ex_1ad8245582ce227e4b47283241ee652ee0"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setParameters</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">map</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv412ParameterIfs" title="ParameterIfs"><span class="n"><span class="pre">ParameterIfs</span></span></a><span class="p"><span class="pre">*</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">parameters_map</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N10Express_ex13setParametersERKNSt3mapINSt6stringEP12ParameterIfsEE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>it runs step of full semantic analysis. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>parameters_map</strong> – map&lt; name, corresponding parameter&gt;. </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>true if successful </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK10Express_ex19getOutputParametersEv">
+<span id="_CPPv3NK10Express_ex19getOutputParametersEv"></span><span id="_CPPv2NK10Express_ex19getOutputParametersEv"></span><span id="Express_ex::getOutputParametersC"></span><span class="target" id="class_express__ex_1a1cf49cb68cb2433eb45bb0c0a4be7cdd"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">list</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="#_CPPv412ParameterIfs" title="ParameterIfs"><span class="n"><span class="pre">ParameterIfs</span></span></a><span class="p"><span class="pre">*</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getOutputParameters</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK10Express_ex19getOutputParametersEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>list of output parameters </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N10Express_ex6genJitEb">
+<span id="_CPPv3N10Express_ex6genJitEb"></span><span id="_CPPv2N10Express_ex6genJitEb"></span><span id="Express_ex::genJit__b"></span><span class="target" id="class_express__ex_1aae3479ff6b965b68b2a30826be55b25c"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">genJit</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">optimization_enable</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">true</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N10Express_ex6genJitEb" title="Permalink to this definition">¶</a><br /></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>optimization_enable</strong> – pass true if you want enable optimizations </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>true if successful </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N10Express_ex3runEv">
+<span id="_CPPv3N10Express_ex3runEv"></span><span id="_CPPv2N10Express_ex3runEv"></span><span id="Express_ex::run"></span><span class="target" id="class_express__ex_1a7f0ea95f05034a6da0a9c277d7d771d5"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">run</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N10Express_ex3runEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>runs calculation of parameters </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>true if successful </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N10Express_ex10setErrorIoEP11ExStreamIfs">
+<span id="_CPPv3N10Express_ex10setErrorIoEP11ExStreamIfs"></span><span id="_CPPv2N10Express_ex10setErrorIoEP11ExStreamIfs"></span><span id="Express_ex::setErrorIo__ExStreamIfsP"></span><span class="target" id="class_express__ex_1adf7d26499ebd27d95379f3fed2702c5e"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setErrorIo</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv411ExStreamIfs" title="ExStreamIfs"><span class="n"><span class="pre">ExStreamIfs</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">error_stream</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N10Express_ex10setErrorIoEP11ExStreamIfs" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>set error_stream once to get error information at each step, by default it doesnt have any error stream. it doesn’t take ownership of error_stream </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>error_stream</strong> – output stream to which errors will be written </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N10Express_ex13setInfoStreamEP11ExStreamIfs">
+<span id="_CPPv3N10Express_ex13setInfoStreamEP11ExStreamIfs"></span><span id="_CPPv2N10Express_ex13setInfoStreamEP11ExStreamIfs"></span><span id="Express_ex::setInfoStream__ExStreamIfsP"></span><span class="target" id="class_express__ex_1a24f243ae67870da7df2eb16058b459fd"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setInfoStream</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv411ExStreamIfs" title="ExStreamIfs"><span class="n"><span class="pre">ExStreamIfs</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">info_stream</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N10Express_ex13setInfoStreamEP11ExStreamIfs" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>set info_stream once to get build information at each step, by default it doesnt have any info output stream. it doesn’t take ownership of info_stream </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>error_stream</strong> – output stream to which info stream will be written </p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+</section>
+<section id="components">
+<h1>components:<a class="headerlink" href="#components" title="Permalink to this heading">¶</a></h1>
+<dl class="cpp struct">
+<dt class="sig sig-object cpp" id="_CPPv414ExDataInterval">
+<span id="_CPPv314ExDataInterval"></span><span id="_CPPv214ExDataInterval"></span><span id="ExDataInterval"></span><span class="target" id="struct_ex_data_interval"></span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ExDataInterval</span></span></span><a class="headerlink" href="#_CPPv414ExDataInterval" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Collaboration diagram for ExDataInterval:</p>
+<figure class="align-default">
+<div align="center" class="align-center"><div class="graphviz"><object data="_images/graphviz-4888fc1225bc49e9126562e4ba8120c745cc8745.svg" type="image/svg+xml" class="graphviz">
+<p class="warning">digraph {
+    graph [bgcolor=&quot;#00000000&quot;]
+    node [shape=rectangle style=filled fillcolor=&quot;#FFFFFF&quot; font=Helvetica padding=2]
+    edge [color=&quot;#1414CE&quot;]
+    &quot;3&quot; [label=&quot;DatasetsStorage_ifs&quot; tooltip=&quot;DatasetsStorage_ifs&quot;]
+    &quot;1&quot; [label=&quot;ExDataInterval&quot; tooltip=&quot;ExDataInterval&quot; fillcolor=&quot;#BFBFBF&quot;]
+    &quot;2&quot; [label=&quot;ExTimeInterval&quot; tooltip=&quot;ExTimeInterval&quot;]
+    &quot;4&quot; [label=&quot;string&quot; tooltip=&quot;string&quot;]
+    &quot;1&quot; -&gt; &quot;2&quot; [dir=forward tooltip=&quot;usage&quot;]
+    &quot;1&quot; -&gt; &quot;3&quot; [dir=forward tooltip=&quot;usage&quot;]
+    &quot;1&quot; -&gt; &quot;4&quot; [dir=forward tooltip=&quot;usage&quot;]
+}</p></object></div>
+</div>
+</figure>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK14ExDataInterval10getEndTimeEv">
+<span id="_CPPv3NK14ExDataInterval10getEndTimeEv"></span><span id="_CPPv2NK14ExDataInterval10getEndTimeEv"></span><span id="ExDataInterval::getEndTimeC"></span><span class="target" id="struct_ex_data_interval_1a08e4e6caa2b201d69b02eb84d1ad0e08"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="n"><span class="pre">ex_time_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getEndTime</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK14ExDataInterval10getEndTimeEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>if sync returns the time of the point which would follow the end point if async returns time of the end point. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK14ExDataInterval15getPointsNumberEv">
+<span id="_CPPv3NK14ExDataInterval15getPointsNumberEv"></span><span id="_CPPv2NK14ExDataInterval15getPointsNumberEv"></span><span id="ExDataInterval::getPointsNumberC"></span><span class="target" id="struct_ex_data_interval_1a3c5d45e164ee1997cfed93de32d89b16"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="n"><span class="pre">uint64_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getPointsNumber</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK14ExDataInterval15getPointsNumberEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>applicable for both async and sync </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>return amount of points </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N14ExDataInterval13setPropertiesE9ex_time_t9ex_time_t7int64_t8uint64_t">
+<span id="_CPPv3N14ExDataInterval13setPropertiesE9ex_time_t9ex_time_t7int64_t8uint64_t"></span><span id="_CPPv2N14ExDataInterval13setPropertiesE9ex_time_t9ex_time_t7int64_t8uint64_t"></span><span id="ExDataInterval::setProperties__ex_time_t.ex_time_t.int64_t.uint64_t"></span><span class="target" id="struct_ex_data_interval_1a9b2f6f2d38142f5bbd065f5f7dd95d70"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setProperties</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">ex_time_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">begin</span></span>, <span class="n"><span class="pre">ex_time_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">end</span></span>, <span class="n"><span class="pre">int64_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">freq</span></span>, <span class="n"><span class="pre">uint64_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">offs</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N14ExDataInterval13setPropertiesE9ex_time_t9ex_time_t7int64_t8uint64_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>it is useful only for sync parameters, It doesn’t set the fields: val_max, val_min ,ds , file_name, they must be set manually </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>return true if successful </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N14ExDataInterval13setPropertiesERK14ExDataInterval8uint64_t">
+<span id="_CPPv3N14ExDataInterval13setPropertiesERK14ExDataInterval8uint64_t"></span><span id="_CPPv2N14ExDataInterval13setPropertiesERK14ExDataInterval8uint64_t"></span><span id="ExDataInterval::setProperties__ExDataIntervalCR.uint64_t"></span><span class="target" id="struct_ex_data_interval_1a3bf6d875fac36fdfa8734a18afdfded4"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setProperties</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv414ExDataInterval" title="ExDataInterval"><span class="n"><span class="pre">ExDataInterval</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">parent</span></span>, <span class="n"><span class="pre">uint64_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">offs</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N14ExDataInterval13setPropertiesERK14ExDataInterval8uint64_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>copies and adapts properties from the parent to its own type, by size recalculation. It doesn’t set the fields: val_max, val_min ,ds , file_name, they must be set manually </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>return true if successful </p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-members">Public Members</p>
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N14ExDataInterval9frequencyE">
+<span id="_CPPv3N14ExDataInterval9frequencyE"></span><span id="_CPPv2N14ExDataInterval9frequencyE"></span><span id="ExDataInterval::frequency__int64_t"></span><span class="target" id="struct_ex_data_interval_1a34f208f9283c0389f570e6aa681837f3"></span><span class="n"><span class="pre">int64_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">frequency</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0</span></span><a class="headerlink" href="#_CPPv4N14ExDataInterval9frequencyE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>this is a signed variable for possible expansion to fractional frequencies </p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+<dl class="cpp class">
+<dt class="sig sig-object cpp" id="_CPPv412ParameterIfs">
+<span id="_CPPv312ParameterIfs"></span><span id="_CPPv212ParameterIfs"></span><span id="ParameterIfs"></span><span class="target" id="class_parameter_ifs"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ParameterIfs</span></span></span><a class="headerlink" href="#_CPPv412ParameterIfs" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Inheritence diagram for ParameterIfs:</p>
+<figure class="align-default">
+<div align="center" class="align-center"><div class="graphviz"><object data="_images/graphviz-b91e61768a79537edadd4b194009ed0e77c4bb5d.svg" type="image/svg+xml" class="graphviz">
+<p class="warning">digraph {
+    graph [bgcolor=&quot;#00000000&quot;]
+    node [shape=rectangle style=filled fillcolor=&quot;#FFFFFF&quot; font=Helvetica padding=2]
+    edge [color=&quot;#1414CE&quot;]
+    &quot;2&quot; [label=&quot;AsyncParameter&quot; tooltip=&quot;AsyncParameter&quot;]
+    &quot;1&quot; [label=&quot;ParameterIfs&quot; tooltip=&quot;ParameterIfs&quot; fillcolor=&quot;#BFBFBF&quot;]
+    &quot;3&quot; [label=&quot;SyncParameter&quot; tooltip=&quot;SyncParameter&quot;]
+    &quot;2&quot; -&gt; &quot;1&quot; [dir=forward tooltip=&quot;public-inheritance&quot;]
+    &quot;3&quot; -&gt; &quot;1&quot; [dir=forward tooltip=&quot;public-inheritance&quot;]
+}</p></object></div>
+</div>
+</figure>
+<p>Collaboration diagram for ParameterIfs:</p>
+<figure class="align-default">
+<div align="center" class="align-center"><div class="graphviz"><object data="_images/graphviz-7dd1f8260d47116de57456cd330360015aafc028.svg" type="image/svg+xml" class="graphviz">
+<p class="warning">digraph {
+    graph [bgcolor=&quot;#00000000&quot;]
+    node [shape=rectangle style=filled fillcolor=&quot;#FFFFFF&quot; font=Helvetica padding=2]
+    edge [color=&quot;#1414CE&quot;]
+    &quot;2&quot; [label=&quot;ExStreamIfs&quot; tooltip=&quot;ExStreamIfs&quot;]
+    &quot;4&quot; [label=&quot;ExTimeInterval&quot; tooltip=&quot;ExTimeInterval&quot;]
+    &quot;1&quot; [label=&quot;ParameterIfs&quot; tooltip=&quot;ParameterIfs&quot; fillcolor=&quot;#BFBFBF&quot;]
+    &quot;3&quot; [label=&quot;string&quot; tooltip=&quot;string&quot;]
+    &quot;1&quot; -&gt; &quot;2&quot; [dir=forward tooltip=&quot;usage&quot;]
+    &quot;1&quot; -&gt; &quot;3&quot; [dir=forward tooltip=&quot;usage&quot;]
+    &quot;1&quot; -&gt; &quot;4&quot; [dir=forward tooltip=&quot;usage&quot;]
+}</p></object></div>
+</div>
+</figure>
+<p>Subclassed by AsyncParameter, SyncParameter</p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N12ParameterIfs7setNameEP19DatasetsStorage_ifsRKNSt6stringERKNSt6stringE">
+<span id="_CPPv3N12ParameterIfs7setNameEP19DatasetsStorage_ifsRKNSt6stringERKNSt6stringE"></span><span id="_CPPv2N12ParameterIfs7setNameEP19DatasetsStorage_ifsRKNSt6stringERKNSt6stringE"></span><span id="ParameterIfs::setName__DatasetsStorage_ifsP.ssCR.ssCR"></span><span class="target" id="class_parameter_ifs_1a67e574fabc63a29820cb66e5970799ae"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setName</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="io_ex.html#_CPPv419DatasetsStorage_ifs" title="DatasetsStorage_ifs"><span class="n"><span class="pre">DatasetsStorage_ifs</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">datasets_storage</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">name</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">extension</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="s"><span class="pre">&quot;.dat&quot;</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N12ParameterIfs7setNameEP19DatasetsStorage_ifsRKNSt6stringERKNSt6stringE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>datasets_storage</strong> – is used to set ‘ds’ field of all intervals wit </p></li>
+<li><p><strong>name</strong> – it determine name of <a class="reference internal" href="#class_parameter_ifs"><span class="std std-ref">ParameterIfs</span></a> instance and is used to fill ‘file_name’ field of all intervals </p></li>
+<li><p><strong>extension</strong> – extension which will be added to name to fill ‘file_name’ field of all intervals </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N12ParameterIfs17checkDataResourceEbP11ExStreamIfs">
+<span id="_CPPv3N12ParameterIfs17checkDataResourceEbP11ExStreamIfs"></span><span id="_CPPv2N12ParameterIfs17checkDataResourceEbP11ExStreamIfs"></span><span id="ParameterIfs::checkDataResource__b.ExStreamIfsP"></span><span class="target" id="class_parameter_ifs_1a4fca86a169e55334bfe93e9d6a0155b2"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">checkDataResource</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">input</span></span>, <a class="reference internal" href="#_CPPv411ExStreamIfs" title="ExStreamIfs"><span class="n"><span class="pre">ExStreamIfs</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">err_stream</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">nullptr</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N12ParameterIfs17checkDataResourceEbP11ExStreamIfs" title="Permalink to this definition">¶</a><br /></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>input</strong> – it determine what type of check will be bone, if instance of <a class="reference internal" href="#class_parameter_ifs"><span class="std std-ref">ParameterIfs</span></a> is input interface use true otherwise (output interface use false) </p></li>
+<li><p><strong>err_stream</strong> – you can temporary change standard output stream. if err_stream is nullptr it will try tu use their own output stream if it exists </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>true if check successful </p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+<dl class="cpp class">
+<dt class="sig sig-object cpp" id="_CPPv411ExStreamIfs">
+<span id="_CPPv311ExStreamIfs"></span><span id="_CPPv211ExStreamIfs"></span><span id="ExStreamIfs"></span><span class="target" id="class_ex_stream_ifs"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ExStreamIfs</span></span></span><a class="headerlink" href="#_CPPv411ExStreamIfs" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Inheritence diagram for ExStreamIfs:</p>
+<figure class="align-default">
+<div align="center" class="align-center"><div class="graphviz"><object data="_images/graphviz-382bf22ae8d866c35de54d24708f6ac14660ea50.svg" type="image/svg+xml" class="graphviz">
+<p class="warning">digraph {
+    graph [bgcolor=&quot;#00000000&quot;]
+    node [shape=rectangle style=filled fillcolor=&quot;#FFFFFF&quot; font=Helvetica padding=2]
+    edge [color=&quot;#1414CE&quot;]
+    &quot;2&quot; [label=&quot;ExErrorStream&quot; tooltip=&quot;ExErrorStream&quot;]
+    &quot;6&quot; [label=&quot;ExErrorStringStream&quot; tooltip=&quot;ExErrorStringStream&quot;]
+    &quot;3&quot; [label=&quot;ExStream&quot; tooltip=&quot;ExStream&quot;]
+    &quot;1&quot; [label=&quot;ExStreamIfs&quot; tooltip=&quot;ExStreamIfs&quot; fillcolor=&quot;#BFBFBF&quot;]
+    &quot;5&quot; [label=&quot;ExStringStream&quot; tooltip=&quot;ExStringStream&quot;]
+    &quot;4&quot; [label=&quot;ExStringStreamIfs&quot; tooltip=&quot;ExStringStreamIfs&quot;]
+    &quot;2&quot; -&gt; &quot;1&quot; [dir=forward tooltip=&quot;public-inheritance&quot;]
+    &quot;6&quot; -&gt; &quot;5&quot; [dir=forward tooltip=&quot;public-inheritance&quot;]
+    &quot;3&quot; -&gt; &quot;1&quot; [dir=forward tooltip=&quot;public-inheritance&quot;]
+    &quot;5&quot; -&gt; &quot;4&quot; [dir=forward tooltip=&quot;public-inheritance&quot;]
+    &quot;4&quot; -&gt; &quot;1&quot; [dir=forward tooltip=&quot;public-inheritance&quot;]
+}</p></object></div>
+</div>
+</figure>
+<p>Subclassed by ExErrorStream, ExStream, ExStringStreamIfs</p>
+</dd></dl>
+
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h3><a href="index.html">Table of Contents</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">main part of api:</a></li>
+<li><a class="reference internal" href="#components">components:</a></li>
+</ul>
+
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/express_ex_api.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="nav-item nav-item-0"><a href="index.html">express-ex  documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">main part of api:</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2022, SVK.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 5.0.2.
+    </div>
+  </body>
+</html>
