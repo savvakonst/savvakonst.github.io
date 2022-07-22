@@ -36,13 +36,14 @@
             
   <section id="the-execution-order-table">
 <h1>the execution order table<a class="headerlink" href="#the-execution-order-table" title="Permalink to this heading">¶</a></h1>
-<div class="graphviz"><object data="_images/graphviz-0afde97d14060a159322411564d446b5eaf5ec0f.svg" type="image/svg+xml" class="graphviz">
+<div class="graphviz"><object data="_images/graphviz-93d390cb24897d178fc4a04db9feaf89ce95a914.svg" type="image/svg+xml" class="graphviz">
 <p class="warning">digraph G {
     fontname = &quot;Helvetica,Arial,sans-serif&quot;
     node [fontname = &quot;Courier&quot; shape = rectangle,fixedsize = false, penwidth = 0]
     edge [fontname = &quot;Courier&quot;, color = darkred]
     labeljust = &quot;l&quot;;
     //rankdir = LR;
+    return [label = return]
 
     subgraph cluster_0 {
 
@@ -75,7 +76,7 @@
 
     subgraph cluster_0_2 {
     p_2 [label = &quot;+&quot;];
-
+    p_2 -&gt; return;
     label = &quot;level 3&quot;;
     }
 
@@ -138,7 +139,7 @@
 
 
 
-    p_2 -&gt; return;
+
 
 }</p></object></div>
 </section>
